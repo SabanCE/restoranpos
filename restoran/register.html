@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezzet Şöleni - Kayıt</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #004d40;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+      }
+
+      .register-container {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .register-container h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #00796b;
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+        font-size: 1rem;
+        outline: none;
+        transition: border 0.3s;
+      }
+
+      .input-group input:focus {
+        border-color: #004d40;
+      }
+
+      .input-group label {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        font-size: 1rem;
+        color: #fff;
+        transition: 0.3s;
+        pointer-events: none;
+      }
+
+      .input-group input:focus + label,
+      .input-group input:not(:placeholder-shown) + label {
+        top: -18px;
+        font-size: 0.85rem;
+        color: #004d40;
+      }
+
+      .register-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: #00796b;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .register-btn:hover {
+        background-color: #004d40;
+      }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 0.8rem;
+        color: #bbb;
+      }
+
+      .footer a {
+        color: #00796b;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer a:hover {
+        color: #004d40;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #000000;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        margin-top: 20px;
+      }
+
+      .back-button:hover {
+        background-color: #004d40;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="register-container">
+      <h2>Lezzet Şöleni Kayıt</h2>
+      <form action="register.php" method="POST">
+        <div class="input-group">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            placeholder=" "
+          />
+          <label for="username">Kullanıcı Adı</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder=" "
+          />
+          <label for="password">Şifre</label>
+        </div>
+        <button type="submit" class="register-btn">Kayıt Ol</button>
+      </form>
+      <div class="footer">
+        <p>Zaten hesabınız var mı? <a href="login.html">Giriş Yap</a></p>
+      </div>
+      <a href="index.html" class="back-button">Geri</a>
+    </div>
+  </body>
+</html>

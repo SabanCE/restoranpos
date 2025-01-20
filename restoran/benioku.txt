@@ -1,0 +1,6 @@
+PROJE VİDEOSU
+https://drive.google.com/file/d/1bO0uFjAShUJdgr15Zyo0M4o6Wcs73dYF/view
+
+PROJEMİ NASIL ÇALIŞTIRIYORUM?
+--XAMPP veya WAMPP SERVER aracığla www klasörüne ekleyip localhost/index.html i taracıyımda aratıp çalıştırıyorum
+Benim veritabanıma bağlanmanız için 192.168.0.12 ip adresiyle bağlanabilirsiniz. portum da 1433

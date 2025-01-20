@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezzet Şöleni</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        margin: 0;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .header {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        color: #00796b;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .header img {
+        width: 200px;
+        display: block;
+        margin: 0 auto 10px;
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+
+      .header p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        /* Beyaz */
+        padding: 15px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0 15px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background: #00796b;
+        /* Yeşil */
+        box-shadow: 4px 4px 8px #bababa, -4px -4px 8px #ffffff;
+        transition: all 0.3s ease;
+      }
+
+      .menu a:hover {
+        background: #004d40;
+        /* Daha koyu yeşil */
+        box-shadow: inset 4px 4px 8px #bababa, inset -4px -4px 8px #ffffff;
+        color: #ffffff;
+      }
+
+      .content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .content img {
+        width: 250px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .login-button {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .login-button a {
+        text-decoration: none;
+        color: white;
+        background-color: #00796b;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 15px 30px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.2s;
+        position: relative;
+        z-index: 1;
+      }
+
+      .login-button a:hover {
+        background-color: #004d40;
+        transform: scale(1.05);
+      }
+
+      .footer {
+        background-color: #00796b;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .menu a {
+          font-size: 1rem;
+          padding: 8px 15px;
+          margin: 0 10px;
+        }
+
+        .content img {
+          width: 200px;
+        }
+
+        .login-button a {
+          font-size: 1rem;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".menu a");
+        buttons.forEach((button) => {
+          button.addEventListener("mouseover", () => {
+            button.style.transform = "scale(1.1)";
+            button.style.transition = "transform 0.3s ease";
+          });
+          button.addEventListener("mouseout", () => {
+            button.style.transform = "scale(1)";
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="fotograflar/restorann.png" alt="Lezzet Şöleni Logo" />
+        <h1>Lezzet Şöleni</h1>
+        <p>Lezzetin ve keyfin buluştuğu adres</p>
+      </div>
+      <div class="menu">
+        <a href="yemek.php">Yemek</a>
+        <a href="tatli.php">Tatlı</a>
+        <a href="soguk.php">Soğuk İçecekler</a>
+        <a href="sıcak.php">Sıcak İçecekler</a>
+      </div>
+      <div class="content">
+        <p>
+          Lezzet Şöleni olarak sizlere en kaliteli ve en lezzetli yemekleri
+          sunmak için buradayız. Geniş menümüzle hem damak zevkinize hitap
+          ediyor hem de nezih bir ortam sunuyoruz.
+        </p>
+      </div>
+      <div class="login-button">
+        <a href="login.html">Giriş Yap</a>
+      </div>
+      <div class="footer">© 2024 Lezzet Şöleni - Tüm Hakları Saklıdır.</div>
+    </div>
+  </body>
+</html>

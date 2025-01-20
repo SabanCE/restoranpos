@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Paneli - Lezzet Şöleni</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+      }
+
+      /* Sol Menü */
+      .sidebar {
+        background-color: #004d40;
+        color: white;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        padding-top: 20px;
+      }
+
+      .sidebar h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #00796b;
+      }
+
+      /* Sağ İçerik */
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #004d40;
+        padding: 10px 20px;
+        color: white;
+      }
+
+      .header span {
+        margin-right: 20px;
+        font-size: 1.2rem;
+      }
+
+      .logout-btn {
+        background-color: #00796b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .logout-btn:hover {
+        background-color: #004d40;
+      }
+
+      /* Section Stil */
+      .section {
+        margin-top: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+      }
+
+      /* Animasyon: Fade In Up */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #004d40;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+        opacity: 0;
+        animation: slideIn 0.8s forwards;
+        animation-delay: 0.2s;
+      }
+
+      .section p {
+        font-size: 1.2rem;
+        color: #333;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+        animation-delay: 0.4s;
+      }
+
+      /* Animasyon: Slide In */
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Sol Menü -->
+    <div class="sidebar">
+      <h2>Admin Paneli</h2>
+      <ul>
+        <li><a href="kullanicihesaplari.php">Kullanıcı Hesapları</a></li>
+        <li><a href="menüler.php">Menüler</a></li>
+        <li><a href="pos.php">POS</a></li>
+        <li><a href="ozet.php">Özet</a></li>
+      </ul>
+    </div>
+
+    <!-- Sağ İçerik -->
+    <div class="content">
+      <!-- Header - Kullanıcı adı ve çıkış -->
+      <div class="header">
+        <span>Hoş geldiniz, Admin</span>
+        <a href="logout.php" class="logout-btn">Çıkış Yap</a>
+      </div>
+
+      <!-- Kullanıcı Hesapları -->
+      <div class="section">
+        <h3>Kullanıcı Hesapları</h3>
+        <p>
+          Burada kullanıcı hesaplarını yönetebilirsiniz. Kullanıcıları
+          görüntüleyebilir ve silebilirsiniz.
+        </p>
+      </div>
+
+      <!-- Menüler -->
+      <div class="section">
+        <h3>Menüler</h3>
+        <p>
+          Burada menülerinizi yönetebilir, yeni ürünler ekleyebilir veya mevcut
+          menüyü güncelleyebilirsiniz.
+        </p>
+      </div>
+
+      <!-- POS -->
+      <div class="section">
+        <h3>POS</h3>
+        <p>
+          Burada masa oluşturabilir ve oluşturduğunuz masanın içeriğini
+          girebilirsiniz.
+        </p>
+      </div>
+
+      <!-- Özet -->
+      <div class="section">
+        <h3>Özet</h3>
+        <p>Burada mevcut olan masaların hesabını ödeyebilirsiniz.</p>
+      </div>
+    </div>
+
+    <script>
+      // Sayfa yüklendikten sonra animasyonların düzgün çalışmasını sağlamak için bir script ekleyelim
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section, index) => {
+          setTimeout(() => {
+            section.style.opacity = 1;
+            section.style.transform = "translateY(0)";
+          }, index * 300); // Her bir bölüm için animasyon gecikmesi ekleyelim
+        });
+      });
+    </script>
+  </body>
+</html>

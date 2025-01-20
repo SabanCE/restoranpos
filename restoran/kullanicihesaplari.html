@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Paneli - Lezzet Şöleni</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+      }
+
+      /* Sol Menü */
+      .sidebar {
+        background-color: #004d40;
+        color: white;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        padding-top: 20px;
+      }
+
+      .sidebar h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #00796b;
+      }
+
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #004d40;
+        padding: 10px 20px;
+        color: white;
+      }
+
+      .header span {
+        margin-right: 20px;
+        font-size: 1.2rem;
+      }
+
+      .logout-btn {
+        background-color: #00796b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .logout-btn:hover {
+        background-color: #004d40;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #004d40;
+        color: white;
+      }
+
+      .delete-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .delete-btn:hover {
+        background-color: #f44336;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Sol Menü -->
+    <div class="sidebar">
+      <h2>Admin Paneli</h2>
+      <ul>
+        <li><a href="kullanicihesaplari.html">Kullanıcı Hesapları</a></li>
+        <li><a href="menüler.html">Menüler</a></li>
+        <li><a href="pos.html">POS</a></li>
+        <li><a href="ozet.html">Özet</a></li>
+      </ul>
+    </div>
+
+    <!-- Sağ İçerik -->
+    <div class="content">
+      <!-- Header - Kullanıcı adı ve çıkış -->
+      <div class="header">
+        <span>Hoş geldiniz, Admin</span>
+        <a href="logout.php" class="logout-btn">Çıkış Yap</a>
+      </div>
+
+      <!-- Kullanıcı Hesapları -->
+      <div class="section">
+        <h3>Kullanıcı Hesapları</h3>
+        <p>Burada kullanıcı hesaplarını yönetebilirsiniz.</p>
+
+        <!-- Kullanıcı Listesi -->
+        <table>
+          <thead>
+            <tr>
+              <th>Kullanıcı Adı</th>
+              <th>Yetki</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            // PHP kısmından gelen kullanıcı verisi
+            require 'kullanicihesaplari.php'; // PHP dosyasını dahil et
+            if ($result->num_rows > 0) : while ($row = $result->fetch_assoc()) :
+            ?>
+            <tr>
+              <td><?php echo $row['kullanici_adi']; ?></td>
+              <td><?php echo $row['yetki']; ?></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
